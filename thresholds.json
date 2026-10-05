@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "description": "Threshold / target values for CNI insights detectors. Edit values here without touching detector code. Keys map to (category, subCategory, detailCategory) used by get_description().",
+    "owner": "CNI Insights"
+  },
+
+  "battery": {
+    "low_plant_availability":  { "_code": "0,3,0",  "uptime_min_pct":   96   },
+    "high_cell_temp":          { "_code": "5,3,0",  "max_temp_c":        40   },
+    "soc_imbalance":           { "_code": "5,3,1",  "max_delta_pct":     10   },
+    "high_soc":                { "_code": "5,3,2",  "max_soc_pct":       95   },
+    "low_soc":                 { "_code": "5,3,3",  "min_soc_pct":       15   },
+    "high_pcs_temp":           { "_code": "5,3,4",  "max_temp_c":        80   },
+    "bess_full_utilization":   { "_code": "5,3,5",  "tolerance_pct":      0.01 },
+    "bess_max_cell_voltage":   { "_code": "5,3,7",  "max_voltage_v":      3.6  },
+    "bess_min_cell_voltage":   { "_code": "5,3,8",  "min_voltage_v":      2.7  },
+    "max_frequency":           { "_code": "5,3,9",  "max_frequency_hz":  51.2    },
+    "min_frequency":           { "_code": "5,3,10", "min_frequency_hz":  48.7    },
+    "high_ac_voltage":         { "_code": "5,3,11", "max_voltage_v":   720    },
+    "low_ac_voltage":          { "_code": "5,3,12", "min_voltage_v":    660    }
+  },
+
+  "solar": {
+    "underperforming_inverters": { "_code": "0,1,2", "max_deviation_pct":  3   },
+    "underperforming_strings":   { "_code": "0,1,3", "max_deviation_pct": 15   },
+    "thermal_derating": {
+      "_code": "0,1,5",
+      "temp_air_c":         38.0,
+      "wind_speed_ms":       2.0,
+      "ideal_temp_floor_c": 45.0,
+      "target_temp_c"  : 45,
+      "derating_coeff" : 0.005
+    },
+    "inverter_downtime":         { "_code": "0,2,0", "poai_min_wm2":      10   },
+    "uptime_below_commitment":   { "_code": "2,1,2", "target_uptime_pct": 100  }
+  }
+}
